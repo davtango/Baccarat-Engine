@@ -1,12 +1,15 @@
 # Baccarat-Engine
 
 ## Briefing
-Baccarat game implemented in SystemVerilog on a Cyclone V FPGA. Designed by David Tang and Hemat Wander. The version of Baccarat played is Punto Banco. Included in this repo are the relevant files for synthesis and testbench files. A .sof file is also included if you'd like to play the game on your own DE1-SoC board!
+Baccarat game implemented in SystemVerilog on a Cyclone V FPGA. Designed by David Tang and Hemat Wander. The engine implements a version of Baccarat called Punto Banco through an FSM-controlled datapath microarchitecture. A .sof file is also included for quick usage on the DE1-SoC board.
 
-## Remarks
-Testbenching for this project was quite rigorous. tb_statemachine.sv written by DT checks for correct state transitions and state outputs for every case outlined in the rules section. 
+## Verification
+Verification for this project was thorough. tb_statemachine.sv written by DT checks for correct state transitions and state outputs for every case outlined in the rules section. 
 
 ## DE1-SoC I/O
+<p align="center">
+  User Interface for the Baccarat Engine
+</p>
 <p align="center">
   <img src="Pictures/baccarat-de1.png" width="600">
 </p>
@@ -18,13 +21,13 @@ Testbenching for this project was quite rigorous. tb_statemachine.sv written by 
 3. Else if the player's score is between 0 to 5, player gets a third card.
 > if banker's score == 7, banker does not get a third card
 > else if banker's score == 6, banker gets a third card if player's third card is a 6 or 7
-> else if banker's score == 5, banker gets a third card if player's third card is [4,7]
-> else if banker's score == 4, banker gets a third card if player's third card is [2,7]
-> else if banker's score == 3, banker gets a third card if player's third card !== 8
-> else if banker's score is [0,2], banker gets a third card regardless
+> else if banker's score == 5, banker gets a third card if player's third card is 4 to 7 (inclusive)
+> else if banker's score == 4, banker gets a third card if player's third card is 2 to 7 (inclusive)
+> else if banker's score == 3, banker gets a third card if player's third card is not 8
+> else if banker's score is 0 to 2 (inclusive), banker gets a third card regardless
 4. Else if player's score is between 6 or 7, player does not get a third card
-> if the banker's score is [0,5], banker gets a third card
-> else Banker does not get a third card
+> if the banker's score is 0 to 5 (inclusive), banker gets a third card
+> else banker does not get a third card
 5. Game over. Calculate score and determine victor or tie.
 ```
 
