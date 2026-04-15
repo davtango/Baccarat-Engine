@@ -1,10 +1,15 @@
 # Baccarat-Engine
 
 ## Briefing
-Baccarat game implemented in SystemVerilog on a Cyclone V FPGA. Designed by David Tang and Hemat Wander. The version of Baccarat played is Punto Banco. Included in this repo are files for synthesis and testbench files for the engine's implementation. 
+Baccarat game implemented in SystemVerilog on a Cyclone V FPGA. Designed by David Tang and Hemat Wander. The version of Baccarat played is Punto Banco. Included in this repo are the relevant files for synthesis and testbench files. A .sof file is also included if you'd like to play the game on your own DE1-SoC board!
 
 ## Remarks
-While this project is pretty simple, the testbenching was quite rigorous! tb_statemachine.sv written by DT checks for correct state transitions and state outputs under several cases in the rules section.
+Testbenching for this project was quite rigorous. tb_statemachine.sv written by DT checks for correct state transitions and state outputs for every case outlined in the rules section. 
+
+## DE1-SoC I/O
+<p align="center">
+  <img src="Pictures/baccarat-de1.png" width="600">
+</p>
 
 ## Rules
 ```
@@ -36,8 +41,6 @@ While this project is pretty simple, the testbenching was quite rigorous! tb_sta
 <p align="center">
   <img src="Pictures/datapath.png" width="600">
 </p>
-
-## DE1-SoC I/O
 
 
 
