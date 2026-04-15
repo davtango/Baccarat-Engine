@@ -25,7 +25,7 @@ Testbenching for this project was quite rigorous. tb_statemachine.sv written by 
 4. Else if player's score is between 6 or 7, player does not get a third card
 > if the banker's score is [0,5], banker gets a third card
 > else Banker does not get a third card
-5. Game over. Tabule score and determine victor or tie.
+5. Game over. Calculate score and determine victor or tie.
 ```
 
 ## State Machine Diagram
