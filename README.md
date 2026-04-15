@@ -5,6 +5,11 @@ Baccarat game implemented in SystemVerilog on a Cyclone V FPGA. Designed by Davi
 
 ## State Machine Diagram
 
+<p align="center">
+  <img src="pictures/statemachine.png" width="600">
+</p>
+
+
 
 ## Datapath
 
